@@ -1,25 +1,22 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Link from 'next/link';
 import { Footer } from '../components/Footer';
 import Links from '../components/Links';
+import HeadLine from '../components/HeadLine';
 
-export default function about() {
+export default function about(props) {
+  console.log(props)
   return (
     <div className={styles.container}>
       <Head>
-        <title>about page</title>
+        <title></title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>about page </h1>
-        <Link href="/">
-          <a>Index page GO!!!</a>
-        </Link>
+        <HeadLine title="about Page" />
         <Links />
       </main>
       <Footer />
     </div>
-  );
+  )
 }

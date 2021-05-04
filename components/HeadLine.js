@@ -1,5 +1,5 @@
-import styles from '../styles/Home.module.css';
-import Link from 'next/link';
+import styles from './HeadLine.module.css';
+
 
 export default function HeadLine(props) {
   return (

@@ -1,13 +1,13 @@
-import { Header } from '../components/Header';
-import React, { useState } from 'react';
+import { Header } from "../components/Header";
+import React, { useState } from "react";
 
 export default function practice() {
   const [str, setStr] = useState([]);
-  const [tmp, setTmp] = useState('');
+  const [tmp, setTmp] = useState("");
   const [findTodo, setFindTodo] = useState([]);
 
-  const arr = ['aaa', 'bbb', 'ccc'];
-  const val = 'bbb';
+  const arr = ["aaa", "bbb", "ccc"];
+  const val = "bbb";
   const b = arr.indexOf(val);
   console.log(b);
 
@@ -17,25 +17,17 @@ export default function practice() {
 
   const addTodo = () => {
     setStr([...str, tmp]);
-    setTmp('');
+    setTmp("");
   };
 
   const removeTodo = (s) => {
     setStr(str.filter((x) => x !== s));
   };
 
-  useEffect(() => {
-    const newItems = str.filter((xx) => {
-      return xx.indexOf(value) !== -1;
-    });
-    setFindTodo(newItems);
-  }, [value]);
-
   return (
     <div>
       <Header />
 
-      <input type="text" value={tmp} onChange={todoChange} />
       <input type="text" value={tmp} onChange={todoChange} />
 
       <button onClick={addTodo}>ボタン</button>

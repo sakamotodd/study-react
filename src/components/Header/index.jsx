@@ -1,5 +1,5 @@
-import styles from './Header.module.css';
-import Link from 'next/link';
+import styles from "./Header.module.css";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -13,7 +13,9 @@ export function Header() {
       <Link href="/practice">
         <a className={styles.anchor}>practice</a>
       </Link>
+      <Link href="/sample">
+        <a className={styles.anchor}>sample</a>
+      </Link>
     </header>
   );
 }
-

@@ -29,7 +29,7 @@ export function IncompleteArea(props) {
       <ul className="pl-4">
         {incompleteTasks.map((incompleteTask, index) => {
           return (
-            <li className="list-disc ml-6">
+            <li key={incompleteTask} className="list-disc ml-6">
               <div className="flex items-center pb-2">
                 <p key={incompleteTask}>{incompleteTask}</p>
                 <button

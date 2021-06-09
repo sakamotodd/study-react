@@ -21,7 +21,7 @@ export function CompleteArea(props) {
       <ul className="pl-4">
         {completeTasks.map((completeTask, index) => {
           return (
-            <li className="list-disc ml-6 ">
+            <li key={completeTask} className="list-disc ml-6 ">
               <div className="flex items-center pb-2" key={completeTask}>
                 <p>{completeTask}</p>
                 <button

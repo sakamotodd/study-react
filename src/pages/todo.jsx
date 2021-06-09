@@ -4,7 +4,7 @@ import { IncompleteArea } from "../components/TODO/IncompleteArea";
 import { CompleteArea } from "../components/TODO/CompleteArea";
 import { InputArea } from "../components/TODO/InputArea";
 
-export default function Sample() {
+export default function Todo() {
   //未完了のTODOに設定する初期値
   const [incompleteTasks, setIncompleteTasks] = useState(["初期値"]);
   //完了のTODOに設定する初期値

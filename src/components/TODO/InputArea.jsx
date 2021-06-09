@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import styles from "../../styles/Home.module.css";
 
 export function InputArea(props) {
@@ -7,16 +8,19 @@ export function InputArea(props) {
     setTmp(e.target.value);
   };
 
-  const searchTask = () => {
-    incompleteTasks.some((task) => {
-      return task === tmp && alert("すでに未完了のTODOにあります");
+  const searchTask = useCallback(() => {
+    setIncompleteTasks((incompleteTasks) => {
+      if (incompleteTasks.some((task) => task === tmp)) {
+        alert("すでに未完了のTODOにあります");
+        setTmp("");
+        console.log(incompleteTasks);
+        return incompleteTasks;
+      }
+      return [...incompleteTasks, tmp];
     });
-  };
-
-  const addTask = () => {
-    setIncompleteTasks([...incompleteTasks, tmp]);
     setTmp("");
-  };
+  }, [tmp]);
+
   return (
     <div className="bg-blue-300 w-96 mt-2 p-2 m-auto rounded-lg">
       <input
@@ -24,11 +28,10 @@ export function InputArea(props) {
         placeholder="TODOを入力"
         value={tmp}
         onChange={InputTask}
-        onBlur={searchTask}
       />
       <button
         className={styles.inputButton}
-        onClick={addTask}
+        onClick={searchTask}
         disabled={tmp == ""}
       >
         追加

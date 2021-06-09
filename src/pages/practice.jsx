@@ -1,47 +1,49 @@
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "../components/Header";
-import React, { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function practice() {
-  const [str, setStr] = useState([]);
-  const [tmp, setTmp] = useState("");
-  const [findTodo, setFindTodo] = useState([]);
+  const [num, setNum] = useState(1);
+  const [bol, setBol] = useState(true);
+  const [text, setText] = useState("");
+  const notify = () => toast('Here is your toast.');
 
-  const arr = ["aaa", "bbb", "ccc"];
-  const val = "bbb";
-  const b = arr.indexOf(val);
-  console.log(b);
-
-  const todoChange = (e) => {
-    setTmp(e.target.value);
+  const plus = () => {
+    if (bol === true) {
+      if (num <= 10) {
+        setNum((num) => num + 1);
+      }
+    }
   };
 
-  const addTodo = () => {
-    setStr([...str, tmp]);
-    setTmp("");
-  };
+  const change = useCallback(() => {
+    setBol((e) => !bol);
+    console.log(bol);
+  }, [bol]);
 
-  const removeTodo = (s) => {
-    setStr(str.filter((x) => x !== s));
+  const inputA = (e) => {
+    if (text.length < 5) {
+      setText(e.target.value);
+    }
   };
 
   return (
-    <div>
+    <>
       <Header />
-
-      <input type="text" value={tmp} onChange={todoChange} />
-
-      <button onClick={addTodo}>ボタン</button>
-      {str.map((s, index) => {
-        return (
-          <ul key={index}>
-            <li>
-              {s}
-              <button onClick={() => removeTodo(s)}>削除</button>
-              <button onClick={() => update(s)}>更新</button>
-            </li>
-          </ul>
-        );
-      })}
-    </div>
+      <p>{bol && num}</p>
+      <button onClick={plus}>ボタン</button>
+      <button onClick={change}>{bol ? "非表示" : "表示"}</button>
+      <br />
+      <input
+        className="border-2 border-black"
+        type="text"
+        value={text}
+        placeholder="文字"
+        onChange={inputA}
+      />
+      <button onClick={notify}>Make me a toast</button>
+      <Toaster />
+    </>
   );
+  5;
 }

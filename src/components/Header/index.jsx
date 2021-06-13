@@ -10,14 +10,17 @@ export function Header() {
       <Link href="/about">
         <a className={styles.anchor}>about</a>
       </Link>
-      <Link href="/practice">
-        <a className={styles.anchor}>practice</a>
+      <Link href="/nextAuth">
+        <a className={styles.anchor}>NextAuth</a>
       </Link>
       <Link href="/todo">
         <a className={styles.anchor}>Todo</a>
       </Link>
       <Link href="/javascript">
         <a className={styles.anchor}>javascript</a>
+      </Link>
+      <Link href="/practice">
+        <a className={styles.anchor}>practice</a>
       </Link>
     </header>
   );

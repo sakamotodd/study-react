@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Main } from '../components/Main';
-import { Footer } from '../components/Footer';
-import { Header } from '../components/Header';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { Main } from "../components/Main";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 export default function Index() {
   return (

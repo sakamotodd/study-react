@@ -6,25 +6,21 @@ export default function NextAuth() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  console.log({ signOut });
 
   return (
-    <div>
-      <Header />
-      {session && (
-        <>
-          Signed in as {session.user.name}
-          <br />
-          <button onClick={signOut}>Sign out</button>
-        </>
-      )}
+    <>
       {!session && (
         <>
           Not signed in <br />
-          <button onClick={signIn}>Sign in</button>
+          <button onClick={() => signIn()}>Sign in</button>
         </>
       )}
-    </div>
+      {session && (
+        <>
+          Signed in as {session.user.name} <br />
+          <button onClick={() => signOut()}>Sign out</button>
+        </>
+      )}
+    </>
   );
 }
-

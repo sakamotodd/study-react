@@ -1,5 +1,6 @@
 import { TextField } from "@material-ui/core";
 import { useState } from "react";
+import { pushMessage } from "../../../firebase";
 
 export default function MessageField({ message, setMessage, name }) {
   const [japanese, setJapanese] = useState(false);
@@ -13,6 +14,7 @@ export default function MessageField({ message, setMessage, name }) {
         if (text === "") return;
 
         if (e.key === "Enter") {
+          pushMessage({ name, message });
           setMessage("");
           e.preventDefault();
         }

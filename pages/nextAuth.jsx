@@ -1,4 +1,3 @@
-import { Header } from "../components/Header";
 import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function NextAuth() {

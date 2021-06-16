@@ -20,17 +20,17 @@ export default function ChatInput({ name }) {
     <>
       <div className={classes.root}>
         <Grid container>
-          <Grid xs={1}>
+          <Grid item xs={1}>
             <Avatar src={avatar} />
           </Grid>
-          <Grid xs={10}>
+          <Grid item xs={10}>
             <MessageField
               message={message}
               setMessage={setMessage}
               name={name}
             />
           </Grid>
-          <Grid xs={1}>c</Grid>
+          <Grid item xs={1}>c</Grid>
         </Grid>
       </div>
       <gravatar />

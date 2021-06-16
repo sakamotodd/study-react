@@ -4,6 +4,7 @@ import { pushMessage } from "../../../firebase";
 
 export default function MessageField({ message, setMessage, name }) {
   const [japanese, setJapanese] = useState(false);
+
   return (
     <TextField
       fullWidth={true}

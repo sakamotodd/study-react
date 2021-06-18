@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 import { Grid, Avatar } from "@material-ui/core";
+import { MessageSubmitButton } from "./MessageSubmitButton";
 import gravatar from "../gravatar/gravatar";
 import MessageField from "./MessageField";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const useStales = makeStyles({
   root: {
@@ -12,6 +13,7 @@ const useStales = makeStyles({
 });
 
 export default function ChatInput({ name }) {
+  const inputRef = useRef(null)
   const [message, setMessage] = useState();
   const classes = useStales();
   const avatar = gravatar(name);
@@ -25,12 +27,20 @@ export default function ChatInput({ name }) {
           </Grid>
           <Grid item xs={10}>
             <MessageField
+              inputRef={inputRef}
               message={message}
               setMessage={setMessage}
               name={name}
             />
           </Grid>
-          <Grid item xs={1}>c</Grid>
+          <Grid item xs={1}>
+          <MessageSubmitButton
+              inputRef={inputRef}
+              name={name}
+              message={message}
+              setMessage={setMessage}
+            />
+          </Grid>
         </Grid>
       </div>
       <gravatar />

@@ -14,9 +14,6 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main page="index" />
-      {
-        process.env.NEXT_PUBLIC_FPP
-      }
       <Footer />
     </div>
   );

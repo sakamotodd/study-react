@@ -16,8 +16,8 @@ export function Header() {
       <Link href="/todo">
         <a className={styles.anchor}>Todo</a>
       </Link>
-      <Link href="/javascript">
-        <a className={styles.anchor}>javascript</a>
+      <Link href="/chatApp">
+        <a className={styles.anchor}>ChatApp</a>
       </Link>
       <Link href="/practice">
         <a className={styles.anchor}>practice</a>

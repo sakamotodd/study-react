@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
-import ChatList from "./ChatList";
-import ChatInput from "./Input/ChatInput";
+import ChatList from "./ChatList/ChatList";
+import ChatInput from "./ChatInput/ChatInput";
 
 const useStales = makeStyles({
   root: {

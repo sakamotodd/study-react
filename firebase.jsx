@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
- const firebaseConfig = {
+const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   databaseURL: "https://chat-66b3f-default-rtdb.firebaseio.com",
@@ -10,7 +10,7 @@ import firebase from "firebase";
   appId: process.env.FIREBASE_APP_ID,
 };
 
-if (firebase.apps.length === 0) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 

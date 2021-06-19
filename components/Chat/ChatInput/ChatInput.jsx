@@ -8,12 +8,11 @@ import { useRef, useState } from "react";
 const useStales = makeStyles({
   root: {
     gridRow: 2,
-    margin: "26px",
   },
 });
 
 export default function ChatInput({ name }) {
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   const [message, setMessage] = useState();
   const classes = useStales();
   const avatar = gravatar(name);
@@ -34,7 +33,7 @@ export default function ChatInput({ name }) {
             />
           </Grid>
           <Grid item xs={1}>
-          <MessageSubmitButton
+            <MessageSubmitButton
               inputRef={inputRef}
               name={name}
               message={message}

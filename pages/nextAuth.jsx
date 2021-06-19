@@ -1,4 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/client";
+import { Header } from "../components/Header";
 
 export default function NextAuth() {
   const [session, loading] = useSession();
@@ -8,6 +9,8 @@ export default function NextAuth() {
 
   return (
     <>
+      <Header />
+
       {!session && (
         <>
           Not signed in <br />
